@@ -30,13 +30,14 @@ USE `blog_db`;
 --
 
 CREATE TABLE `posts` (
-  `postid` int NOT NULL,
+  `postid` int NOT NULL AUTO_INCREMENT,
   `title` varchar(30) NOT NULL,
   `content` varchar(30) NOT NULL,
   `author`  varchar(30) NOT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `userid` int DEFAULT NULL
+  `userid` int DEFAULT NULL,
+  PRIMARY KEY (postid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
