@@ -37,7 +37,8 @@ CREATE TABLE `posts` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `userid` int DEFAULT NULL,
-  PRIMARY KEY (postid)
+  PRIMARY KEY (postid),
+  FOREIGN KEY (userid) REFERENCES users(userid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -49,7 +50,8 @@ CREATE TABLE `posts` (
 CREATE TABLE `users` (
   `userid` int NOT NULL,
   `username` varchar(30) NOT NULL,
-  `password` varchar(50) DEFAULT NULL
+  `password` varchar(50) DEFAULT NULL,
+   PRIMARY KEY (userid)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
